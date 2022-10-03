@@ -6,12 +6,11 @@ def scrape_movie_details(url1):
     url = (url1)
     movie_page = requests.get(url)
     soup_data=BeautifulSoup(movie_page.text,'html.parser')
-    dict={}
     one_div = soup_data.find('div',class_='container')
     body = one_div.find("div",class_="media-body")
-    list= body.find_all("li") 
+    list= body.find_all("li")
     movie_name=one_div.find("h1", slot="title").get_text()
-    dict["movie_name"]=movie_name
+    dict = {"movie_name": movie_name}
     for vlu in list:
         data=vlu.text
         var=data.split()

@@ -12,17 +12,15 @@ def movie_actor_details(url):
 
     movie_data_list=[]
     for vlu in div1:
-        data_dic={}
         a=vlu.find("a")["href"][11:]
-        data_dic["actor_name"]=a
+        data_dic = {"actor_name": a}
         movie_data_list.append(data_dic)
 
     for vlu2 in div2:
-        data_dic1={}
         a1=vlu2.find("a")["href"][11:]
-        data_dic1["actor_name"]=a1
+        data_dic1 = {"actor_name": a1}
         list.append(data_dic1)
-    
+
     with open("task12.json","w+") as file:
         json.dump(list, file,indent=4)
         return movie_data_list

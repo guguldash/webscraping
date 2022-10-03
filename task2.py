@@ -9,7 +9,7 @@ def group_by_year(all_movies):
         if year not in unic_year:
             unic_year.append(year)
             unic_year.sort()
-    
+
     movie_dic={i:[] for i in unic_year}
     for mov in all_movies:
         year=mov["year"]
